@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Museum</title>
+    <link rel="stylesheet" href="style.css">
+	<link href='https://fonts.googleapis.com/css?family=Cairo' rel='stylesheet'>
+      <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const user = JSON.parse(localStorage.getItem('current_user_v2'));
+    if (!user) {
+        window.location.href = 'signin.html';
+    } else {
+        // Add authenticated class to show content
+        document.body.classList.add('authenticated');
+    }
+});
+</script>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo"  >
+			 <img id="logo1" style="width:300px; " src="image/logo1.png">
+			 </div>
+        </nav>
+		            <button style="margin-left:55%; margin-right:55%;" class="button-74" id="languageToggle">العربية</button>
+
+    </header>
+	
+    <div class="carousel">
+      
+        <div class="list">
+            <div class="item">
+                <img src="image/img1.jpg">
+                <div class="content">
+                    <div id="author1" class="author">Historic site</div>
+                    <div id="title1" class="title">Abu Simbel</div>
+                    <div  id="topic1" class="topic">Great Temple</div>
+                    <div  id="des1" class="des">
+A UNESCO World Heritage Site in southern Egypt, Abu Simbel features two rock-cut temples built by Pharaoh Ramses II (13th century BCE). The main temple, guarded by four 20-meter statues of Ramses II, aligns with the sun to illuminate its inner sanctuary on February 22 and October 22. The smaller temple honors Queen Nefertari and goddess Hathor. Saved from Lake Nasser’s flooding in the 1960s via a UNESCO-led relocation, it showcases ancient engineering and modern preservation, drawing global visitors to its historic grandeur.                    </div>
+                    <div class="buttons">
+						      <button class="see-more" data-modal-content="content1">MORE INFO</button>
+
+                    </div>
+						<div class="mapfield">
+				
+				<div class="map">
+  
+
+  <img src="image/1.png" class="foto" style="width:100%">
+  
+  </div> 
+  </div>
+			
+                </div>
+				
+					
+				
+				
+				
+				
+<div class="modal-details" id="content1" style="font-family: 'Cairo';">
+
+    <h2>Abu Simbel</h2>
+	 <h3>Abu Simbel Temple: A Monument of Ancient Grandeur and Modern Ingenuity</h3>
+    <p>The Abu Simbel Temples, a UNESCO World Heritage Site in southern Egypt, stand as a testament to the grandeur of ancient Egyptian architecture and the ingenuity of modern preservation. Built during the reign of Pharaoh Ramses II (1279–1213 BCE), the complex consists of two rock-cut temples: the Great Temple, dedicated to Ramses II and the gods Amun, Ra-Horakhty, and Ptah, and the Small Temple, honoring Queen Nefertari and the goddess Hathor.</p>
+ <h3>Construction and Purpose</h3>
+
+<p> Ramses II commissioned the temples to showcase Egypt's power and cultural influence in Nubia, a region rich in gold and trade goods. Carved into a mountainside around 1264 BCE, the Great Temple features four colossal 20-meter statues of Ramses II guarding its entrance. The smaller temple, one of the few dedicated to a queen, highlights Nefertari’s significance, with statues of her and Ramses II standing at equal height—a rare honor in Egyptian art.</p>
+<h3>Rediscovery</h3>
+
+<p> Over time, the temples were abandoned and buried under sand. They were rediscovered in 1813 by Swiss explorer Johann Ludwig Burckhardt. Italian explorer Giovanni Belzoni later excavated the site in 1817, revealing its splendor to the world.</p>
+ <h3>Relocation: A Modern Marvel</h3>
+
+<p> In the 1960s, the temples faced submersion due to the construction of the Aswan High Dam. A UNESCO-led international effort saved the site by meticulously cutting the temples into massive blocks, relocating them 65 meters higher and 200 meters back from the Nile. This monumental project, completed in 1968, cost $40 million and remains one of history’s greatest feats of engineering.</p>
+<h3>Architectural Highlights</h3>
+
+<p> •	Great Temple: The facade features four towering statues of Ramses II. Inside, the temple follows a traditional Egyptian layout, with a hypostyle hall, pillared chambers, and a sanctuary. The temple’s alignment allows sunlight to illuminate the inner sanctum twice a year (February 22 and October 22), lighting statues of Ramses and the gods.</p>
+<p>•	Small Temple: Dedicated to Hathor and Nefertari, this temple is adorned with statues of the king and queen, symbolizing their equal status. The interior features intricate carvings and Hathor-headed columns.
+</p>
+ <h3>Cultural Significance</h3>
+
+<p> The temples not only celebrate Ramses II’s reign but also reflect ancient Egypt’s religious and artistic achievements. The solar alignment and detailed reliefs, depicting battles and offerings, highlight the Egyptians’ advanced understanding of astronomy and artistry.</p>
+<p>Today, Abu Simbel attracts visitors worldwide, offering a glimpse into ancient Egypt’s glory and the remarkable efforts to preserve it for future generations.
+</p>
+<h3>3D Model of Temple </h3>
+
+
+
+    <iframe 
+        id="matterport-iframe"
+        src="https://my.matterport.com/show/?m=VxYAEMXh6dW&help=1&brand=0&ts=1&play=1" 
+        allowfullscreen 
+        allow="xr-spatial-tracking">
+    </iframe>
+
+
+
+ </div>
+            </div>
+            <div class="item">
+                <img src="image/img2.jpg">
+                <div class="content">
+                    <div id="author2" class="author">Historic site</div>
+                    <div id="title2" class="title">Menna's</div>
+                    <div id="topic2" class="topic">Tomb</div>
+                    <div id="des2" class="des">
+The Tomb of Menna (TT69) is located in the Theban Necropolis on the west bank of the Nile near Luxor. It dates to the 18th Dynasty of the New Kingdom (c. 1550–1292 BCE) and belonged to Menna, a scribe and overseer of fields under Thutmose IV or Amenhotep III.
+					</div>
+                    <div class="buttons">
+						      <button class="see-more" data-modal-content="content2">MORE INFO</button>
+
+                    </div>
+						<div class="mapfield">
+				
+				<div class="map">
+  
+
+  <img src="image/2.png" class="foto" style="width:100%">
+  
+  </div> 
+  </div>
+			
+                </div>
+				
+				
+					
+				
+				
+<div class="modal-details" id="content2" style="font-family: 'Cairo';">
+    <h2>The Tomb of Menna</h2>
+	 <h3>The Tomb of Menna: A Glimpse into Ancient Egyptian Life</h3>
+    <p>The Tomb of Menna, located in the Theban Necropolis on the west bank of the Nile near Luxor, Egypt, is one of the most well-preserved and richly decorated tombs from the New Kingdom period (circa 1550–1070 BCE). Menna, who lived during the 18th Dynasty under the reign of Pharaoh Thutmose IV, was a high-ranking official who held the title of "Scribe of the Fields of the Lord of the Two Lands." His primary role was to oversee agricultural production and manage the estates of the pharaoh, making him an important figure in the administration of ancient Egypt.</p>
+
+<p>The tomb, designated as TT69 (Theban Tomb 69), is renowned for its vivid and detailed wall paintings that provide a fascinating insight into the daily life, religious beliefs, and artistic traditions of ancient Egypt. These paintings depict a variety of scenes, including agricultural activities, hunting, fishing, and offerings to the gods, as well as intimate family moments. The artwork not only highlights Menna's professional duties but also reflects his personal life, showcasing his wife, Henuttawy, and their children.</p>
+ <h3>Architectural Features</h3>
+
+
+<p> The Tomb of Menna follows a typical design for elite tombs of the New Kingdom. It consists of a transverse hall, a long corridor, and an inner chamber. The transverse hall is the most elaborately decorated section, featuring scenes of Menna and his family in various activities. The corridor leads to the inner chamber, where the burial shaft is located. The walls of the tomb are covered with finely executed paintings that have retained their vibrant colors over millennia, thanks to the dry climate of Egypt and the tomb's relative isolation.</p>
+ <h3>Artistic Significance</h3>
+
+<p> The paintings in the Tomb of Menna are celebrated for their artistic quality and attention to detail. The artists employed a combination of naturalistic and symbolic styles, capturing the essence of daily life while adhering to the religious and cultural conventions of the time. For example, agricultural scenes depict farmers plowing fields, harvesting crops, and tending to livestock, offering a glimpse into the economic foundation of ancient Egypt. Similarly, hunting and fishing scenes symbolize Menna's ability to provide for his family and his mastery over the natural world.</p>
+
+<p>Religious themes are also prominent in the tomb's decoration. Scenes of offerings to the gods, including Osiris, Anubis, and Hathor, emphasize Menna's piety and his hope for a successful journey to the afterlife. The depiction of the "Weighing of the Heart" ceremony, a crucial moment in the Egyptian concept of the afterlife, underscores the importance of moral integrity and divine judgment.</p>
+<h3>Historical and Cultural Insights</h3>
+
+<p> The Tomb of Menna serves as a valuable resource for understanding the social and economic structures of ancient Egypt. The detailed representations of agricultural practices, for instance, provide evidence of the tools and techniques used by farmers, as well as the organization of labor. Additionally, the inclusion of Menna's family in the artwork highlights the significance of familial relationships and the role of women in elite households.</p>
+
+<p>The tomb also reflects the religious beliefs of the time, particularly the emphasis on the afterlife and the need for proper burial rituals. The elaborate decorations and inscriptions were intended to ensure Menna's eternal well-being and to secure his place among the gods.</p>
+ <h3>Preservation and Tourism</h3>
+
+<p> In recent years, the Tomb of Menna has undergone extensive conservation efforts to protect its fragile paintings from damage caused by environmental factors and human activity. Modern technologies, such as 3D scanning and digital restoration, have been employed to document and preserve the tomb's artwork for future generations.</p>
+
+<p>Today, the Tomb of Menna is a popular destination for tourists and scholars alike. Its well-preserved paintings offer a unique window into the world of ancient Egypt, making it an essential site for anyone interested in the history, art, and culture of this remarkable civilization.</p>
+<h3>3D Model of the Tomb </h3>
+
+
+
+    <iframe 
+        id="matterport-iframe"
+        src="https://my.matterport.com/show/?m=vLYoS66CWpk&help=1&brand=0&ts=1&play=1" 
+        allowfullscreen 
+        allow="xr-spatial-tracking">
+    </iframe>
+
+ </div>
+            </div>
+			 <div class="item">
+                <img src="image/img3.jpg">
+                <div class="content">
+                    <div id="author3" class="author">Historic site</div>
+                    <div id="title3" class="title">Wahtye's</div>
+                    <div id="topic3" class="topic">Tomb</div>
+                    <div id="des3" class="des">
+In November 2018, the tomb of Wahtye was discovered in the Saqqara necropolis. Dating to c. 2415–2405 BC, the tomb is 10 meters long and 3 meters wide. It contains reliefs of Wahtye, his wife Weret Ptah, his four children, and his mother Merit Meen. Wahtye, who stole the tomb from his brother, was buried there with his family, though not all in wooden sarcophagi.
+					</div>
+		   <div class="buttons">
+						      <button class="see-more" data-modal-content="content3">MORE INFO</button>
+
+                    </div>
+					<div class="mapfield">
+				
+				<div class="map">
+  
+
+  <img src="image/3.png" class="foto" style="width:100%">
+  
+  </div> 
+  </div>
+                </div>
+				
+				
+					
+				
+				
+				
+				
+<div class="modal-details" id="content3" style="font-family: 'Cairo';">
+    <h2>Whhtye Tomb</h2>
+	 <h3>The Tomb of Wahtye: A Remarkable Discovery from Ancient Egypt</h3>
+    <p>The Tomb of Wahtye, discovered in 2018 in the Saqqara necropolis near Cairo, Egypt, is one of the most significant archaeological finds of the 21st century. Dating back to the Fifth Dynasty of the Old Kingdom (circa 2500–2350 BCE), this tomb belongs to a high-ranking priest named Wahtye, who served under Pharaoh Neferirkare Kakai. The tomb's exceptional preservation, intricate carvings, and vivid wall paintings have provided archaeologists with invaluable insights into the religious practices, daily life, and artistic traditions of ancient Egypt.</p>
+ <h3>Discovery and Significance</h3>
+
+<p>The tomb was uncovered by an Egyptian archaeological team led by Dr. Mostafa Waziri, Secretary-General of Egypt's Supreme Council of Antiquities. Its discovery made headlines worldwide due to its remarkable state of preservation and the wealth of artifacts and inscriptions found within. The tomb is a mastaba, a type of rectangular, flat-roofed structure commonly used for elite burials during the Old Kingdom.</p>
+<p>Wahtye held the title of "Royal Purification Priest" and was also an overseer of the royal palace, indicating his high status in the court of Pharaoh Neferirkare Kakai. The tomb's elaborate decorations and inscriptions reflect his importance and his close association with the pharaoh.</p>
+<h3>Architectural Features</h3>
+
+<p>The Tomb of Wahtye is a large, rectangular structure with a series of chambers and corridors. The main hall is adorned with intricately carved reliefs and colorful paintings that depict scenes from Wahtye's life, his family, and his religious duties. The tomb features a false door, a common architectural element in ancient Egyptian tombs, which was believed to serve as a portal between the world of the living and the afterlife.</p>
+<p>The walls of the tomb are covered with hieroglyphic inscriptions that provide details about Wahtye's titles, family lineage, and offerings made to the gods. These inscriptions are invaluable for understanding the social and religious context of the Fifth Dynasty.</p>
+ <h3>Artistic and Cultural Insights</h3>
+
+<p>The tomb's decorations are a masterpiece of Old Kingdom art. The reliefs and paintings depict a variety of scenes, including agricultural activities, hunting, fishing, and religious rituals. These images not only highlight Wahtye's role as a priest but also provide a glimpse into the daily life of ancient Egyptians. For example, scenes of farmers harvesting crops and craftsmen at work illustrate the economic activities that sustained the kingdom.</p>
+<p>One of the most striking features of the tomb is the depiction of Wahtye's family. His wife, Weret Ptah, and their children are prominently featured in the artwork, emphasizing the importance of family in ancient Egyptian society. The inclusion of family members in tomb decorations was believed to ensure their participation in the afterlife.</p>
+<p>Religious themes are also central to the tomb's decorations. Scenes of offerings to the gods, including Ra, Osiris, and Anubis, reflect Wahtye's devotion and his hope for a successful journey to the afterlife. The tomb also contains depictions of funerary rituals, such as the "Opening of the Mouth" ceremony, which was performed to ensure the deceased's ability to eat, drink, and speak in the afterlife.</p>
+<h3>Burial Shafts and Artifacts</h3>
+
+<p>The tomb contains several burial shafts, some of which were found intact. These shafts contained a variety of artifacts, including statues, pottery, and wooden masks. One of the most notable discoveries was a limestone statue of Wahtye himself, which provides a rare glimpse into the physical appearance of an ancient Egyptian priest.</p>
+<p>The artifacts found in the tomb are not only valuable for their artistic quality but also for the information they provide about ancient Egyptian burial practices. For example, the presence of ushabtis (small funerary figurines) suggests that Wahtye believed in the necessity of servants in the afterlife to perform tasks on his behalf.</p>
+
+ <h3>Preservation and Tourism</h3>
+
+<p>Since its discovery, the Tomb of Wahtye has become a focal point for archaeological research and conservation efforts. The tomb's delicate reliefs and paintings require careful preservation to protect them from environmental damage and the effects of tourism. Modern technologies, such as 3D scanning and digital mapping, have been employed to document the tomb's features and ensure its long-term preservation.</p>
+<p>The tomb is also a popular destination for tourists, offering a unique opportunity to experience the grandeur of ancient Egyptian art and architecture. Its discovery has reinvigorated interest in the Saqqara necropolis, which is home to numerous other significant tombs and monuments.</p>
+
+<h3>3D Model of Temple </h3>
+
+    <iframe 
+        id="matterport-iframe"
+        src="https://my.matterport.com/show/?m=BsXpwTSYSyN&help=1&brand=0&ts=1&play=1" 
+        allowfullscreen 
+        allow="xr-spatial-tracking">
+    </iframe>
+
+ </div>
+            </div>
+			
+             <div class="item">
+                <img src="image/img4.jpg">
+                <div class="content">
+                    <div id="author4" class="author">Historic site</div>
+                    <div id="title4" class="title">Mehu's</div>
+                    <div id="topic4" class="topic">Tomb</div>
+                    <div id="des4" class="des">
+The Tomb of Mehu is an ancient Old Kingdom tomb located in the Saqqara necropolis, dating to the Sixth Dynasty (c. 2340 BCE). Mehu was a high-ranking official, holding titles such as Vizier, Chief Justice, and Overseer of the Royal Scribes.
+</br>
+The tomb is famous for its well-preserved and colorful reliefs, depicting hunting, fishing, farming, and banquet scenes, offering insights into daily life in ancient Egypt. After being closed to the public for nearly 80 years, it was reopened in 2018.</div>
+                    <div class="buttons">
+						      <button class="see-more" data-modal-content="content4">MORE INFO</button>
+
+                    </div>
+					
+					<div class="mapfield">
+				
+				<div class="map">
+  
+
+  <img src="image/4.png" class="foto" style="width:100%">
+  
+  </div> 
+  </div>
+			
+                </div>
+				
+				
+			
+					
+				
+				
+				
+				
+<div class="modal-details" id="content4" style="font-family: 'Cairo';">
+    <h2>Mehu Tomb</h2>
+	 <h3>The Tomb of Mehu: A Glimpse into the Life of an Ancient Egyptian Official</h3>
+<p>The Tomb of Mehu, located in the Saqqara necropolis near Cairo, Egypt, is one of the most fascinating burial sites from the Sixth Dynasty of the Old Kingdom (circa 2345–2181 BCE). This tomb belongs to Mehu, a high-ranking official who held several important titles, including "Vizier" (the highest administrative position in ancient Egypt), "Chief Justice," and "Overseer of the Six Great Courts." Mehu served under Pharaohs Teti and Pepi I, and his tomb reflects his elevated status and the wealth he accumulated during his lifetime. </p>
+<p>Discovered in 1940 by Egyptian archaeologist Zaki Saad, the Tomb of Mehu has since been celebrated for its intricate wall reliefs, vivid paintings, and architectural design. It provides valuable insights into the life, duties, and beliefs of an elite official in ancient Egypt. </p>
+ <h3>Architectural Features</h3>
+
+<p>The Tomb of Mehu is a large, multi-chambered mastaba, a type of flat-roofed tomb structure commonly used for elite burials during the Old Kingdom. The tomb is divided into several sections, including an offering hall, a burial chamber, and a serdab (a sealed room housing statues of the deceased). The walls of the tomb are adorned with finely carved reliefs and colorful paintings that depict scenes from Mehu's life, his professional duties, and his religious beliefs. </p>
+<p>One of the most striking features of the tomb is its false door, a common architectural element in ancient Egyptian tombs. The false door was believed to serve as a portal between the world of the living and the afterlife, allowing the deceased to receive offerings and communicate with the living. </p>
+<h3>Artistic and Cultural Significance</h3>
+
+<p> The Tomb of Mehu is renowned for its exceptional artwork, which showcases the skill and creativity of ancient Egyptian artisans. The reliefs and paintings depict a wide range of scenes, including agricultural activities, hunting, fishing, and religious rituals. These images provide a vivid portrayal of daily life in ancient Egypt and highlight Mehu's role as a high-ranking official.</p>
+ <h4>Scenes of Daily Life</h4>
+
+<p> The tomb's decorations include detailed depictions of agricultural activities, such as plowing, sowing, and harvesting crops. These scenes reflect the importance of agriculture in ancient Egyptian society and Mehu's role in overseeing the management of land and resources. Other scenes show craftsmen at work, producing goods such as pottery, jewelry, and furniture, which were essential for both daily life and funerary practices.</p>
+<h4>Hunting and Fishing</h4>
+
+<p> Scenes of hunting and fishing are also prominent in the tomb. These activities were not only practical but also symbolic, representing the deceased's ability to provide for his family and his mastery over the natural world. The depictions of wildlife, including fish, birds, and desert animals, are rendered with remarkable accuracy and attention to detail.</p>
+ <h4>Religious Themes</h4>
+
+<p>Religious imagery plays a central role in the tomb's decorations. Scenes of offerings to the gods, including Osiris, Anubis, and Hathor, emphasize Mehu's piety and his hope for a successful journey to the afterlife. The tomb also contains depictions of funerary rituals, such as the "Opening of the Mouth" ceremony, which was performed to ensure the deceased's ability to eat, drink, and speak in the afterlife. </p>
+ <h3>Inscriptions and Titles</h3>
+
+<p>The walls of the Tomb of Mehu are covered with hieroglyphic inscriptions that provide valuable information about his life and career. These inscriptions list Mehu's numerous titles, including "Vizier," "Chief Justice," and "Overseer of the Six Great Courts," highlighting his importance in the administration of ancient Egypt. The inscriptions also include prayers and spells intended to protect Mehu and ensure his well-being in the afterlife. </p> 
+<h3>Burial Chamber and Artifacts</h3>
+
+<p> The burial chamber of the Tomb of Mehu contains a sarcophagus, which was originally intended to hold his mummified remains. Although the tomb was looted in antiquity, archaeologists have discovered fragments of funerary objects, including pottery, statues, and ushabtis (small funerary figurines). These artifacts provide insights into ancient Egyptian burial practices and beliefs about the afterlife.</p>
+<h3>Preservation and Tourism</h3>
+<p>The Tomb of Mehu has undergone extensive conservation efforts to preserve its delicate reliefs and paintings. Modern technologies, such as 3D scanning and digital restoration, have been used to document the tomb's features and ensure its long-term preservation. The tomb is now open to the public, offering visitors a unique opportunity to experience the grandeur of ancient Egyptian art and architecture.</p>
+<h3>3D Model of Temple </h3>
+
+
+    <iframe 
+        id="matterport-iframe"
+		src="https://my.matterport.com/show/?m=JuHk3h8Gfcx&help=1&brand=0&ts=1&play=1"  
+        allowfullscreen 
+        allow="xr-spatial-tracking">
+    </iframe>
+
+ 
+
+
+ </div>
+            </div>
+
+<div class="item">
+    <img src="image/img5.jpg">
+    <div class="content">
+        <div id="author5" class="author">Historic site</div>
+        <div id="title5" class="title">Sphinx </div>
+        <div id="topic5" class="topic">Statue</div>
+        <div id="des5" class="des">The Great Sphinx , a colossal limestone guardian with the body of a lion and the head of a pharaoh, embodies eternal vigilance and divine wisdom. Carved during the reign of Pharaoh Khafre, it symbolizes the fusion of human intellect and primal strength, watching over Egypt’s golden sands for millennia</div>
+        <div class="buttons">
+            <button class="see-more" data-modal-content="content5">MORE INFO</button>
+        </div>
+        <div class="mapfield">
+            <div class="map">
+            </div>
+        </div>
+    </div>
+    <div class="modal-details" id="content5" style="font-family: 'Cairo';">
+<h2>The Great Sphinx </h2>
+	 <h3 style="display: none;">In the Voice of the Sphinx</h3>
+<p style="display: none;">I, the eternal sentinel of the horizon, rise from the sands with the majesty of Ra’s first dawn. My lion’s body, hewn from the bedrock, bears the strength of the desert’s roar, while my visage, carved in the likeness of a king, holds the secrets of stars and stone. I am the riddle and the answer, the watcher who outlives dynasties. </p>
+<p style="display: none;">Pharaohs kneeled at my paws, offering hymns to the sun. Empires crumbled, yet I remained—my eyes fixed on the east, awaiting Ra’s rebirth each morning. The winds have scarred my face, and time has stolen my nose, but my silence speaks louder than the clamor of conquest. To stand before me is to stand before Time itself. I am the guardian of thresholds, the bridge between mortal ambition and divine eternity. The desert whispers my name, but only the wise dare unravel my mystery.</p>    
+
+
+<div style="width:100%;max-width:1920px;margin:auto;">
+  <model-viewer 
+    src="image/sphinx.glb"
+    alt="Statue of Ramses III"
+    ar
+    camera-controls
+    auto-rotate
+    shadow-intensity="1"
+    style="width:100%;height:100vh;background:#222;">
+  </model-viewer>
+</div>
+</div>
+</div>
+<div class="item">
+    <img src="image/img6.jpg">
+    <div class="content">
+        <div id="author6" class="author">Historic site</div>
+        <div id="title6" class="title">Ramses III</div>
+        <div id="topic6" class="topic">Statue</div>
+        <div id="des6" class="des">This majestic statue depicts Pharaoh Ramses III standing triumphantly between the gods Horus and Seth, symbolizing his divine authority over both order and chaos. Crafted from granite, it embodies his role as the unifier of Egypt and the living incarnation of balance.</div>
+        <div class="buttons">
+            <button class="see-more" data-modal-content="content6">MORE INFO</button>
+        </div>
+        <div class="mapfield">
+            <div class="map">
+            </div>
+        </div>
+    </div>
+    <div class="modal-details" id="content6" style="font-family: 'Cairo';">
+<h2 >Statue of Ramses III with Horus and Seth</h2>
+	 <h3 style="display: none;">In the Voice of Ramses III</h3>
+<p style="display: none;">I, Usermaatre Meryamun Ramses III, the Guardian of Egypt, stand eternal in stone, flanked by Horus and Seth—the divine twins of duality. Horus, the falcon-eyed lord of the sky, grants me the wisdom to uphold ma’at (order), while Seth, the storm-bringer, lends me the strength to crush rebellion. This statue is not merely my likeness; it is a testament to my reign, where the Two Lands thrived under my spear and scepter </p>
+<p style="display: none;">When invaders surged like the Nile’s flood, I shattered them at the gates of Egypt, as I did the Sea Peoples. My temples at Medinet Habu echo with hymns of victory, and here, in this stone, I bind chaos and order as one. To gaze upon me is to witness the pharaoh who wore the Double Crown not as a burden, but as a covenant with the gods.</p>
+
+<div style="width:100%;max-width:1920px;margin:auto;">
+  <model-viewer 
+    src="image/statue_of_ramses_iii.glb"
+    alt="Statue of Ramses III"
+    ar
+    camera-controls
+    auto-rotate
+    shadow-intensity="1"
+    style="width:100%;height:100vh;background:#222;">
+  </model-viewer>
+</div>
+
+</div>
+</div>
+
+
+
+
+
+
+
+        </div>
+ 
+        <div class="thumbnail">
+            <div class="item">
+                <img src="image/img1.jpg">
+                <div class="content">
+                    <div id="thumbnailtitle1" class="title">
+                        Abu Simbel Temple
+                    </div>
+                    <div id="thumbnaildescription1" class="description">
+                        Abu Simbel built ...
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="image/img2.jpg">
+                <div class="content">
+                    <div id="thumbnailtitle2" class="title">
+                        Menna's Tomb
+                    </div>
+                    <div id="thumbnaildescription2" class="description">
+                        The Tomb of Menna ...
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="image/img3.jpg">
+                <div class="content">
+                    <div id="thumbnailtitle3" class="title">
+                        Wahtye's Tomb
+                    </div>
+                    <div id="thumbnaildescription3" class="description">
+                       The Tomb of Wahty ...
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="image/img4.jpg">
+                <div class="content">
+                    <div id="thumbnailtitle4" class="title">
+                        Mehu's Tomb
+                    </div>
+                    <div id="thumbnaildescription4" class="description">
+                      The Tomb of Mehu ...
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="image/img5.jpg">
+                <div class="content">
+                    <div id="thumbnailtitle5" class="title">
+                       Sphinx statue
+                    </div>
+                    <div id="thumbnaildescription5" class="description">
+                      The statue of Sphinx ...
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="image/img6.jpg">
+                <div class="content">
+                    <div id="thumbnailtitle6" class="title">
+                        Ramses III statue
+                    </div>
+                    <div id="thumbnaildescription6" class="description">
+                      The statue of Rams ...
+                    </div>
+                </div>
+            </div>
+        </div>
+      
+
+        <div class="arrows">
+            <button id="prev"><</button>
+            <button id="next">></button>
+        </div>
+    
+        <div class="time"></div>
+    </div>
+
+<div class="modal-overlay" id="modalOverlay">
+    <div class="modal-content">
+        <span class="close-modal" id="closeModal">&times;</span>
+        <div id="modalBody"></div>
+    </div>
+</div>
+
+    <script src="app.js"></script>
+    <!-- Place this after <script src="app.js"></script> -->
+
+ <script>
+// إضافة زر الخروج مع تغيير مكانه حسب اللغة
+document.addEventListener('DOMContentLoaded', function() {
+    const user = getCurrentUser && getCurrentUser();
+    if(user) {
+        const logoutBtn = document.createElement('button');
+        logoutBtn.className = 'button-74';
+        logoutBtn.style.position = 'fixed';
+        logoutBtn.style.top = '35px';
+        logoutBtn.style.zIndex = '1111';
+        logoutBtn.style.right = '45px'; // الوضع الطبيعي: يمين للإنجليزية
+        logoutBtn.textContent = 'Sign out';
+        logoutBtn.id = 'logoutBtn';
+        logoutBtn.onclick = () => {
+            logoutUser && logoutUser();
+            window.location.href = 'signin.html';
+        };
+        document.body.prepend(logoutBtn);
+
+        // دالة لتغيير مكان ونص الزر حسب اللغة
+        function updateLogoutBtn(lang) {
+            if (lang === 'ar') {
+                logoutBtn.textContent = 'Sign out'; // نص الزر بالعربية
+                logoutBtn.style.right = '45px';   // شمال
+                logoutBtn.style.left = '';      // إزالة اليمين
+            } else {
+                logoutBtn.textContent = 'تسجيل الخروج';
+                logoutBtn.style.left = '45px';  // يمين
+                logoutBtn.style.right = '';       // إزالة الشمال
+            }
+        }
+
+        // عند الضغط على زر تغيير اللغة
+        const langBtn = document.getElementById('languageToggle');
+        if (langBtn) {
+            langBtn.addEventListener('click', function() {
+                if (langBtn.textContent === 'العربية') {
+                    updateLogoutBtn('ar');
+                } else {
+                    updateLogoutBtn('en');
+                }
+            });
+
+            // ضبط الزر عند التحميل لأول مرة حسب اللغة الحالية
+            if (langBtn.textContent === 'العربية') {
+                updateLogoutBtn('ar');
+            } else {
+                updateLogoutBtn('en');
+            }
+        }
+    }
+});
+</script>
+<script>
+// تحقق من حالة تسجيل الدخول
+document.addEventListener('DOMContentLoaded', function() {
+    const user = JSON.parse(localStorage.getItem('current_user_v2'));
+    const currentPage = location.pathname.split('/').pop();
+    
+    if (currentPage === 'index.html' && !user) {
+        window.location.href = 'signin.html';
+    }
+    
+    if ((currentPage === 'signin.html' || currentPage === 'signup.html') && user) {
+        window.location.href = 'index.html';
+    }
+});
+</script>
+</body>
+</html>

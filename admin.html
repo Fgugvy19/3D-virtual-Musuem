@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="css/style.css">
+     <style>
+        .admin-container { max-width: 800px; margin: 40px auto; background: #f0f0f0; padding: 30px; border-radius: 10px; color: #1b1b1b; }
+        .user-list { margin-top: 60px; }
+        .user-item { background: #f0f0f0; margin-bottom: 15px; padding: 15px; border-radius: 6px; display: flex; justify-content: space-between; align-items: center; }
+        .user-actions button { margin-left: 10px; }
+        .logout-btn { float: right; margin-top: -30px; }
+        .form-group1 label { display: block; margin-bottom: 8px; color: #333; }
+        .form-group1 { margin-bottom: 40px; }
+    </style>
+</head>
+<body>
+    <div class="admin-container" id="adminLoginBox">
+        <h2 style="margin-bottom: 40px; " >Admin Login</h2>
+        <form id="adminLoginForm">
+            <s></s>
+            <div class="form-group1">
+  <input type="text" id="adminUser" placeholder=" " required>
+  <label for="adminUser">Username</label>
+</div>
+            
+
+             <div class="form-group1">
+  <input type="password" id="adminPass" placeholder=" " required>
+  <label for="adminUser">Password</label>
+</div>
+            <button type="submit" class="button-74">Login</button>
+            <div id="admin-message" style="color: red; margin-top: 10px;"></div>
+
+        </form>
+    </div>
+
+    <div class="admin-container" id="adminPanel" style="display:none;">
+        <button class="button-74 logout-btn" id="adminLogout">Logout</button>
+        
+
+        
+        <h2>Pending User Accounts</h2>
+        <div class="user-list" id="userList"></div>••••••
+
+
+ <h2 style="margin-bottom: 25px;">Add Tourist Attraction Content</h2>
+    <form id="attractionForm" style="background: #fff; padding: 25px; border-radius: 8px; margin-bottom: 40px; box-shadow: 0 2px 8px #0001;">
+        <div class="form-group1">
+            
+            <input type="text" id="attractionName" placeholder="" required>
+            <label for="attractionName">Attraction Name</label>
+        </div>
+        <div class="form-group1">
+            
+        <input type="file" id="bgImage" accept="image/*" required>
+            <label for="bgImage">Background Image URL</label>
+        </div>
+        <div class="form-group1">
+            
+            <textarea id="content" rows="3" placeholder="" required style="width:100%;"></textarea>
+            <label for="content">Content</label>
+        </div>
+        <div class="form-group1">
+            
+        <input type="file" id="model3d" accept=".glb,.gltf,.obj,.fbx,.zip" required>
+            <label for="model3d">3D Model URL</label>
+        </div>
+        <div class="form-group1">
+            
+            <input type="text" id="desc" placeholder="" required>
+            <label for="desc">Short Description</label>
+        </div>
+        <button type="submit" class="button-74" style="width: 120px;">Apply</button>
+        <span id="applyMsg" style="margin-left: 20px; color: green; font-weight: bold;"></span>
+    </form>
+
+
+    </div>
+
+
+    
+    <script>
+const adminUser = "admin";
+const adminPass = "A1B2C3";
+
+document.getElementById('adminLoginForm').onsubmit = function(e) {
+    e.preventDefault();
+    const user = document.getElementById('adminUser').value.trim();
+    const pass = document.getElementById('adminPass').value.trim();
+    const messageDiv = document.getElementById('admin-message');
+    messageDiv.textContent = '';
+    
+    if (user === adminUser && pass === adminPass) {
+        document.getElementById('adminLoginBox').style.display = 'none';
+        document.getElementById('adminPanel').style.display = 'block';
+        loadUsers();
+    } else {
+        messageDiv.textContent = "Invalid admin credentials.";
+    }
+};
+
+async function loadUsers() {
+    try {
+        const response = await fetch('api/users.php?action=list', {
+            method: 'GET',
+            headers: {
+                'Cache-Control': 'no-cache',
+                'Pragma': 'no-cache',
+                'If-Modified-Since': '0'
+            },
+            cache: 'no-store'
+        });
+        
+        console.log('Response headers:', response.headers);
+        
+        const text = await response.text();
+        console.log('Debug Point 3: Raw API response:', text);
+        
+        let data;
+        try {
+            data = JSON.parse(text);
+            console.log('Debug Point 4: Parsed data:', data);
+        } catch (e) {
+            console.error('JSON parse error:', e);
+            throw new Error('Invalid JSON response');
+        }
+        
+        // Debug Point 5: Check data structure
+        console.log('Debug Point 5: Data validation', {
+            hasSuccess: 'success' in data,
+            hasUsers: 'users' in data,
+            usersIsArray: Array.isArray(data.users),
+            userCount: data.users?.length
+        });
+
+        if (data.success && Array.isArray(data.users)) {
+            if (data.users.length > 0) {
+                console.log('Debug Point 6: Found users, displaying...');
+                displayUsers(data.users);
+            } else {
+                console.log('Debug Point 6: No users found');
+                document.getElementById('userList').innerHTML = "<i>No users found in database</i>";
+            }
+        } else {
+            throw new Error('Invalid data format');
+        }
+    } catch (error) {
+        console.error('Debug Point 7: Error:', error);
+        document.getElementById('userList').innerHTML = 
+            `<i>Error loading users: ${error.message}</i>`;
+    }
+}
+
+function displayUsers(users) {
+    const userList = document.getElementById('userList');
+    userList.innerHTML = '';
+
+    if (!Array.isArray(users) || users.length === 0) {
+        userList.innerHTML = "<i>No users found</i>";
+        return;
+    }
+
+    users.forEach(user => {
+        if (!user) return;
+        const div = document.createElement('div');
+        div.className = 'user-item';
+        const status = user.status || 'pending';
+        div.innerHTML = `
+            <div>
+                <b>Name:</b> ${user.name || 'N/A'}<br>
+                <b>Email:</b> ${user.email || 'N/A'}<br>
+                <b>Device:</b> ${user.device_info || 'Unknown'}<br>
+                <b>Status:</b> <span style="color:${status === 'approved' ? 'green' : (status === 'pending' ? 'orange' : 'red')}">${status}</span><br>
+                <b>Registration Date:</b> ${user.created_at ? new Date(user.created_at).toLocaleString() : 'Unknown'}
+            </div>
+            <div class="user-actions">
+                ${status !== 'approved' ? `
+                    <button class="button-74" onclick="approveUser(${user.id})">Approve</button>
+                    <button class="button-74" onclick="rejectUser(${user.id})">Reject</button>
+                ` : ''}
+                <button class="button-74" onclick="deleteUser(${user.id})" style="">Delete</button>
+            </div>
+        `;
+        userList.appendChild(div);
+    });
+}
+
+// Add new delete function
+async function deleteUser(userId) {
+    if (!confirm('Are you sure you want to delete this user?')) {
+        return;
+    }
+
+    try {
+        const formData = new FormData();
+        formData.append('userId', userId);
+        
+        const response = await fetch('api/users.php?action=delete', {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Cache-Control': 'no-cache',
+                'Pragma': 'no-cache'
+            },
+            cache: 'no-store'
+        });
+        
+        const result = await response.json();
+        if (result.success) {
+            loadUsers(); // Reload the user list
+        } else {
+            alert(result.error || 'Failed to delete user');
+        }
+    } catch (error) {
+        console.error('Error deleting user:', error);
+        alert('Error deleting user');
+    }
+}
+
+async function approveUser(userId) {
+    try {
+        const formData = new FormData();
+        formData.append('userId', userId);
+        
+        const response = await fetch('api/users.php?action=approve', {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Cache-Control': 'no-cache',
+                'Pragma': 'no-cache'
+            },
+            cache: 'no-store'
+        });
+        
+        const result = await response.json();
+        if (result.success) {
+            loadUsers();
+        }
+    } catch (error) {
+        console.error('Error approving user:', error);
+    }
+}
+
+async function rejectUser(userId) {
+    try {
+        const formData = new FormData();
+        formData.append('userId', userId);
+        
+        const response = await fetch('api/users.php?action=reject', {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Cache-Control': 'no-cache',
+                'Pragma': 'no-cache'
+            },
+            cache: 'no-store'
+        });
+        
+        const result = await response.json();
+        if (result.success) {
+            loadUsers();
+        }
+    } catch (error) {
+        console.error('Error rejecting user:', error);
+    }
+}
+
+document.getElementById('adminLogout').onclick = function() {
+        document.getElementById('adminPanel').style.display = 'none';
+        document.getElementById('adminLoginBox').style.display = 'block';
+    };
+
+
+document.getElementById('attractionForm').onsubmit = function(e) {
+    e.preventDefault();
+    document.getElementById('applyMsg').textContent = "You added it successfully";
+    // Clear all fields
+    this.reset();
+    setTimeout(() => {
+        document.getElementById('applyMsg').textContent = "";
+    }, 2000);
+};
+    </script>
+</body>
+</html>
